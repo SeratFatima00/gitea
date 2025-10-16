@@ -5,8 +5,8 @@
     // override "local" from packaged version
     "GOTOOLCHAIN": "auto"
   },
-  "features": {
-    // installs nodejs into container
+ "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/node:1": {
       "version": "latest"
     },
@@ -42,5 +42,5 @@
       "onAutoForward": "notify"
     }
   },
-  "postCreateCommand": "make deps"
+  "postCreateCommand": "docker --version && docker compose version || true && make deps"
 }
